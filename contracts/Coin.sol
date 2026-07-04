@@ -21,7 +21,7 @@ contract Coin {
     // Send an amount of newly created coins to an address
     // Can only be called by the contract creator
     function mint(address receiver, uint amount) public {
-        required(msg.sender == minter);
+        require(msg.sender == minter);
         balances[receiver] += amount;
     }
 
